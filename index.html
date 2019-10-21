@@ -30,52 +30,62 @@ Yuan
 </head>
 
 <body>
-
+    <center>
 <div id="container">
 
     <h1><!--<a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>-->
-        <span>MediaRecorder</span></h1>
+        <span>Tic Tech - Let your tics happen naturally</span></h1>
+
+    <h4><span>
+            1. Once you hit "Start Recording", the timer will start counting down for 3 minutes<br>
+            2. If you stop the recording before the timer ends, you will have to restart the recording (no pause)<br>
+            3. Once you click "Submit", you will not be able to record additional videos
+        </span></h4>
 
     <!--<p>For more information see the MediaStream Recording API <a
             href="http://w3c.github.io/mediacapture-record/MediaRecorder.html"
             title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>
     -->
-    <video id="gum" playsinline autoplay muted></video>
-    <video id="recorded" playsinline loop></video>
-
-    <div>
+     <div>
         <!--<button id="start">Start camera</button>-->
         <button id="record">Start Recording</button>
         <!--<button id="play" disabled>Play</button>-->
         <button id="download" disabled>Download</button>
         <!--<button id="submit" disabled>Submit</button>-->
     </div>
-
+    
     <div>
         Time Left ::
-        <input id = "minutes" type = "text" style = "width: 10px; border: none; font-size: 16px; font-weight: bold; color: black;"><font size = '5'>:</font>
-        <input id = "seconds" type = "text" style = "width: 20px; border: none; font-size: 16px; font-weight: bold; color:black;">
+        <input id = "minutes" type = "text" ><font size = '5'>:</font>
+        <input id = "seconds" type = "text"> 
+        <!--<input id = "minutes" type = "text" style = "width: 10px; border: none; font-size: 16px; font-weight: bold; color: black;"><font size = '5'>:</font>
+        <input id = "seconds" type = "text" style = "width: 20px; border: none; font-size: 16px; font-weight: bold; color:black;">-->
+    </div>
+    <br>
+    <div>
+    <div class="videoFrame">
+        <video id="gum" playsinline autoplay muted></video>
+        <video id="recorded" playsinline loop></video>
     </div>
 
+    <!-- TAKING OUT ECHO CANCELLATION-->
     <div>
-        <h4>Media Stream Constraints options</h4>
+        <!--<h4>Media Stream Constraints options</h4>-->
         <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
     </div>
+
 
     <div>
         <span id="errorMsg"></span>
     </div>
 
-    <!--<a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record"
-        title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>-->
-
 </div>
+    </center>
 </body>
 <!-- include adapter for srcObject shim -->
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 <script src="js/main.js" async></script>
 <script src="../../../js/lib/ga.js"></script>
-<script src="js/clock.js" type="text/javascript"></script>
 <script src="js/timer.js" type="text/javascript"></script>
 
 </html>

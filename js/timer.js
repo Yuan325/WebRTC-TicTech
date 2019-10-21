@@ -1,4 +1,4 @@
-var countdownMinutes = 0.1;
+var countdownMinutes = 0.2;
 
 var mins;
 var secs;
@@ -38,9 +38,16 @@ function time(){
 
 function getMinutes(){
     mins = Math.floor (secs/60);
-    return mins;
+    return pad(mins,2);
 }
 
 function getSeconds(){
-    return secs - Math.round(mins*60);
+    secs = secs - Math.round(mins*60);
+    return pad(secs,2);
+}
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0"+s;
+    return s;
 }
